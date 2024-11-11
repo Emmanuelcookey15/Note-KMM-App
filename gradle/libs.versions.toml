@@ -1,0 +1,44 @@
+[versions]
+agp = "8.5.1"
+desugar_jdk_libs = "2.1.3"
+kotlin = "2.0.0"
+compose = "1.5.4"
+compose-material3 = "1.1.2"
+androidx-activityCompose = "1.8.0"
+squareup-sqldelight = "1.5.3"
+kotlinx-datetime = "0.4.0"
+dagger = "2.45"
+daggerCompiler = "1.0.0"
+serialization = "1.6.3"
+kotlin-kapt-version = "1.8.0"
+
+[libraries]
+desugar_jdk_libs = { module = "com.android.tools:desugar_jdk_libs", version.ref = "desugar_jdk_libs" }
+kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
+androidx-activity-compose = { module = "androidx.activity:activity-compose", version.ref = "androidx-activityCompose" }
+compose-ui = { module = "androidx.compose.ui:ui", version.ref = "compose" }
+compose-ui-tooling = { module = "androidx.compose.ui:ui-tooling", version.ref = "compose" }
+compose-ui-tooling-preview = { module = "androidx.compose.ui:ui-tooling-preview", version.ref = "compose" }
+compose-foundation = { module = "androidx.compose.foundation:foundation", version.ref = "compose" }
+compose-material3 = { module = "androidx.compose.material3:material3", version.ref = "compose-material3" }
+squareup-sqldelight = { module = "com.squareup.sqldelight:runtime", version.ref = "squareup-sqldelight" }
+kotlinx-datetime = { module = "org.jetbrains.kotlinx:kotlinx-datetime", version.ref = "kotlinx-datetime" }
+sqldelight-android-driver = { module = "com.squareup.sqldelight:android-driver", version.ref = "squareup-sqldelight" }
+sqldelight-native-driver = { module = "com.squareup.sqldelight:native-driver", version.ref = "squareup-sqldelight" }
+kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "serialization"}
+hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "dagger" }
+androidx-hilt-compiler = { module = "androidx.hilt:hilt-compiler", version.ref = "daggerCompiler" }
+androidx-hilt-navigation-compose = { module = "androidx.hilt:hilt-navigation-compose", version.ref = "daggerCompiler" }
+hilt-android-compiler = { module = "com.google.dagger:hilt-android-compiler", version.ref = "dagger" }
+
+[plugins]
+androidApplication = { id = "com.android.application", version.ref = "agp" }
+androidLibrary = { id = "com.android.library", version.ref = "agp" }
+kotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+kotlinMultiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
+kotlinCocoapods = { id = "org.jetbrains.kotlin.native.cocoapods", version.ref = "kotlin" }
+compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
+sqldelight = { id = "com.squareup.sqldelight", version.ref = "squareup-sqldelight"}
+kapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "kotlin-kapt-version" }
+hiltAndroid = { id = "com.google.dagger.hilt.android", version.ref = "dagger"}
+kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin-kapt-version" }
