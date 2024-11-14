@@ -41,10 +41,10 @@ fun NoteItem(
     }
 
     Column(
-        modifier = Modifier
+        modifier = modifier
             .clip(RoundedCornerShape(5.dp))
             .background(backgroundColor)
-            .clickable { onNoteClick }
+            .clickable { onNoteClick.invoke() }
             .padding(16.dp)
     ) {
         Row(
@@ -62,7 +62,7 @@ fun NoteItem(
                 contentDescription = "Delete note",
                 modifier = Modifier
                     .clickable(MutableInteractionSource(), null) {
-                        onDeleteClick
+                        onDeleteClick.invoke()
                     }
             )
         }
