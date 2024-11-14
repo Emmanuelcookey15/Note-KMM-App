@@ -16,7 +16,7 @@ object DateTimeUtil {
         return dateTime.toInstant(TimeZone.currentSystemDefault()).toEpochMilliseconds()
     }
 
-    fun farmatNoteDtae(dateTime: LocalDateTime): String {
+    fun farmatNoteDate(dateTime: LocalDateTime): String {
         val month = dateTime.month.name.lowercase().take(3).replaceFirstChar {  it.uppercase() }
         val day = if (dateTime.dayOfMonth < 10) "0${dateTime.dayOfMonth}" else dateTime.dayOfMonth
         val year = dateTime.year
