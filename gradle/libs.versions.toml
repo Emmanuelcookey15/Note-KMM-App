@@ -11,6 +11,7 @@ dagger = "2.51.1"
 daggerCompiler = "1.2.0"
 serialization = "1.6.3"
 kotlin-kapt-version = "1.8.0"
+navigationCompose = "2.8.3"
 
 [libraries]
 desugar_jdk_libs = { module = "com.android.tools:desugar_jdk_libs", version.ref = "desugar_jdk_libs" }
@@ -30,6 +31,7 @@ hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "dagge
 androidx-hilt-compiler = { module = "androidx.hilt:hilt-compiler", version.ref = "daggerCompiler" }
 androidx-hilt-navigation-compose = { module = "androidx.hilt:hilt-navigation-compose", version.ref = "daggerCompiler" }
 hilt-android-compiler = { module = "com.google.dagger:hilt-android-compiler", version.ref = "dagger" }
+androidx-navigation-compose = { group = "androidx.navigation", name = "navigation-compose", version.ref = "navigationCompose" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
@@ -41,4 +43,4 @@ compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "
 sqldelight = { id = "com.squareup.sqldelight", version.ref = "squareup-sqldelight"}
 kapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "kotlin-kapt-version" }
 hiltAndroid = { id = "com.google.dagger.hilt.android", version.ref = "dagger"}
-kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin-kapt-version" }
+kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }

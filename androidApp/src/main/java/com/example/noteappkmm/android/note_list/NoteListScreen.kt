@@ -13,6 +13,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.material3.FloatingActionButton
@@ -34,6 +35,7 @@ import androidx.hilt.navigation.compose.hiltViewModel
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun NoteListScreen(
+    onNavigateClick: (Long?) -> Unit,
     viewModel: NoteListViewModel = hiltViewModel()
 ) {
     val state by viewModel.state.collectAsState()
@@ -46,8 +48,9 @@ fun NoteListScreen(
         floatingActionButton = {
             FloatingActionButton(
                 onClick = {
-
+                    onNavigateClick.invoke(-1L)
                 },
+                shape = RoundedCornerShape(50.dp),
                 containerColor = Color.Black
             ) {
                 Icon(
@@ -106,7 +109,7 @@ fun NoteListScreen(
                         note = notes[index],
                         backgroundColor = Color(notes[index].colourHex),
                         onNoteClick = {
-
+                            onNavigateClick.invoke(notes[index].id)
                         },
                         onDeleteClick = {
                             viewModel.deleteNoteById(notes[index].id!!)

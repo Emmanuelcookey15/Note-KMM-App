@@ -8,6 +8,9 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.compose.rememberNavController
+import com.example.noteappkmm.android.navigation.AppNavHost
+import com.example.noteappkmm.android.navigation.ScreenA
 import com.example.noteappkmm.android.note_list.NoteListScreen
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -17,7 +20,8 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             MyApplicationTheme {
-                NoteListScreen()
+                val navController = rememberNavController()
+                AppNavHost(navHostController = navController, startDestination = ScreenA)
             }
         }
     }
